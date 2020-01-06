@@ -1,0 +1,2 @@
+Log Date,Store Full Name,Store IP,Store Status,Log Sql Action,Log Result
+2019-03-07 22:11:22+01:00,G1a00 - terminal,192.168.20.34,open,.INSERT INTO STORES (store_short_name s,Error: INSERT INTO STORES (store_short_name store_full_name store_ip store_status) VALUES (G10a30 G1a00 - terminal 192.168.20.34open);<br>Duplicate entry G10a30 for key store_short_name

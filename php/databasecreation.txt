@@ -1,0 +1,40 @@
+<?php
+    /*
+        TABLE STORES
+        store-id store-short-name store-full-name store-ip store-status 
+
+        TABLE LOGS
+        log-id log-date log-sql-action log-result store-id
+
+        create database store_data
+
+        CREATE TABLE STORES (
+            store_id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+            store_short_name varchar(15) UNIQUE NOT NULL,
+            store_full_name varchar(35) UNIQUE NOT NULL,
+            store_ip varchar(30) UNIQUE NOT NULL,
+            store_status varchar(30) NOT NULL
+        )ENGINE = InnoDB;
+
+        CREATE TABLE LOGS (
+            log_id  int AUTO_INCREMENT PRIMARY KEY,
+            log_date varchar(25) NOT NULL,
+            log_sql_action varchar(40) NOT NULL,
+            log_result text NOT NULL,
+            store_id int NOT NULL,
+            CONSTRAINT FK3 FOREIGN KEY (store_id) REFERENCES STORES (store_id)
+                ON DELETE CASCADE
+                ON UPDATE CASCADE
+        )ENGINE = InnoDB;
+
+        UPDATE STORES
+            SET store_short_name = 'G3', City= 'Frankfurt'
+
+        INSERT INTO STORES (store_short_name, store_full_name,  store_ip,      store_status)
+                    VALUES ('G10',            'G10 - Moldova',  '192.168.1.3', 'close');
+
+        INSERT INTO LOGS (log_date,  log_sql_action, log_result,    store_id)
+                VALUES ( '10.2.6',  'isql -s -t',   '192.168.1.3', ........);
+    */
+
+?>

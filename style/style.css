@@ -1,0 +1,195 @@
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding: 0;
+    display: flex;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.row {
+    max-height: 97vh;
+}
+
+.hidden {
+    display: none;
+}
+
+.inactive{
+    background-color: #e74c3c;
+}
+
+.list-stores-container-left,.list-stores-container-right,.log-container {
+    margin: 1rem 1rem;
+    /* border: 3px solid #2980b9; */    
+}
+
+.list-stores-container-left{
+    width:35vw;
+}
+
+.list-stores-container-right {
+    width:35vw;
+}
+
+.log-container{
+    width:25vw;
+    height: 50vh;
+}
+
+.log-btn{
+    margin: 1rem 1rem;
+    width:25vw;
+    height: 43%;
+}
+
+.list-title {
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+    background:linear-gradient(to right,#2c3e50,#5b6161);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+.list-title::after {
+    position: absolute;
+    content: "";
+    border: 1px solid gray;
+    top:140%;
+    left: 0;
+    right: 0;
+}
+
+.storeListItem{
+    display: flex;
+    padding: 0.8rem;
+    width: 100%;    
+}
+.storeListItem-name{
+    flex:1;
+    background-color: #2ecc71;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 3rem;
+    padding: 0.6rem 1rem;
+    box-shadow: 1px 2px 5px gray;
+    border-radius: 10px;
+}
+.storeListItem-btn{
+    outline: none;
+    flex:1;
+    background-color: #3498db;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    border: none;
+    padding: 0.6rem 1rem;
+    box-shadow: 1px 2px 5px gray;
+    border-radius: 10px ;
+    margin-left: 20px;
+    transition: 1s transform;
+}
+
+.storeListItem-btn:hover{
+    background-color: #9b59b6;   
+    transform: translateY(-3px);
+}
+
+.storeListItem-btn:active{
+    transform: translateY(-1px);
+}
+
+.storeListItem-btn-red{
+    background-color: #e67e22 !important;
+}
+.storeListItem-btn-red:hover{
+    background-color: #e74c3c !important;
+}
+.email-send{
+    flex:1;
+    background-color: #3498db;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    border: none;
+    padding: 0.6rem 1rem;
+    box-shadow: 1px 2px 5px gray;
+    border-radius: 10px ;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.log-container-data-item{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.log-btn ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#log-btn-item{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #3498db;
+    padding: 0.8rem;
+    color: #34495e;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+#wait-box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #bdc3c7;
+    z-index: 10;
+    opacity: 0.3;
+    visibility: hidden;
+}
+
+#wait-box-loading-msg{
+    position: absolute;
+    color: #2d3f52;
+    z-index: 13;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    font-size: 8rem;
+}
+
+.succes-msg{
+    background-color: #3498db;
+}
+
+.list-wrapper{
+    height: 88%;
+    overflow-y:auto;
+}
+
+.list-wrapper::-webkit-scrollbar {
+    width:30px;
+  }
+
+.list-wrapper::-webkit-scrollbar {
+    background:transparent; 
+}
+
+.list-wrapper::-webkit-scrollbar-thumb {
+    background:rgba(255,0,0,0.4) !important;
+  }

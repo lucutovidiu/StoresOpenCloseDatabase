@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aviz Intrare Iesire</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./JavaScript/jquery.js"></script>
+    <script src="./JavaScript/script.js"></script>
+</head>
+<!-- <li class="stores-item">
+    <span class="list-g-name">Magazin G11</span>
+    <button class="stores-btn" id="G11_open" data-status="open" data-magazin="G11" data-ip="192.168.1.11">Deschide Baza de Date</button>
+    </li> -->
+
+<body>
+    <div id="wait-box">
+        <div id="wait-box-loading-msg">Loading ...</div>
+    </div>
+
+    <div class="row list-stores-container-left">
+
+        <h1 class="list-title">Lista Baza de date Magazine</h1>
+        <div id="open-stores" class="list-wrapper">
+            <!-- <div class="storeListItem">
+                <span class="storeListItem-name">Magazin G3</span>
+                <button class="storeListItem-btn" id="G3_open" data-status="close" data-magazin="G3"
+                    data-store-id="1">Deschide Baza de Date</button>
+            </div>
+            <div class="storeListItem">
+                <span class="storeListItem-name">Magazin G3</span>
+                <button class="storeListItem-btn" id="G3_open" data-status="close" data-magazin="G3"
+                    data-store-id="1">Deschide Baza de Date</button>
+            </div>
+            <div class="storeListItem">
+                <span class="storeListItem-name">Magazin G3</span>
+                <button class="storeListItem-btn" id="G3_open" data-status="close" data-magazin="G3"
+                    data-store-id="1">Deschide Baza de Date</button>
+            </div> -->
+
+
+        </div>
+
+    </div>
+
+
+    <div class="row list-stores-container-right">
+
+        <h1 class="list-title">Lista Magazine Baza de date Deschisa</h1>
+        <div id="close-stores" class="list-wrapper">
+
+            <!-- <div class="storeListItem"><span class="storeListItem-name">Magazin G3</span><button
+                    class="storeListItem-btn" id="G3_close" data-status="close" data-magazin="G3"
+                    data-store-id="50">Blocheaza Tranzactii</button>
+                <a class="email-send" href="mailto:address@domain.com?subject=My Subject Line">CONTACT US</a>
+            </div> -->
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="row-log">
+        <div class="log-btn">
+            <!-- <button>Test</button> -->
+            <ul>
+                <li><a id="log-btn-item" class="storeListItem-btn" target="_blank"
+                        href="http://localhost/StoresOpenCloseDatabase/php/storemanager.php?status=GET_LOGS_DATA">Show
+                        All
+                        Logs</a></li>
+            </ul>
+        </div>
+        <div class="log-container">
+            <h1 class="list-title">Log Data</h1>
+            <div id="log-container-data" class="list-wrapper">
+                <!-- <p class="log-container-data-item">test</p> -->
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
