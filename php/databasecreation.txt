@@ -6,13 +6,13 @@
         TABLE LOGS
         log-id log-date log-sql-action log-result store-id
 
-        create database store_data
+        create database store_data;
 
         CREATE TABLE STORES (
             store_id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
             store_short_name varchar(15) UNIQUE NOT NULL,
             store_full_name varchar(35) UNIQUE NOT NULL,
-            store_ip varchar(30) UNIQUE NOT NULL,
+            store_ip varchar(30) NOT NULL,
             store_status varchar(30) NOT NULL
         )ENGINE = InnoDB;
 

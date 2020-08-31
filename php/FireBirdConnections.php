@@ -1,7 +1,10 @@
 <?php
 
-function alterTriggerActive($ip){
-    $db = $ip.':supermarket-bo';
+function alterTriggerActive($ip,$store_short_name){
+    if($store_short_name === "G40" || $store_short_name === "G42")
+        $db = $ip.':supermarket-bo-'.$store_short_name;
+    else
+        $db = $ip.':supermarket-bo';
     $username = 'SYSDBA';
     $password = 'masterkey';
     // Connect to database
@@ -12,16 +15,20 @@ function alterTriggerActive($ip){
     $commitResult = ibase_commit ($dbh);
     if(!$sth || !$commitResult){
         echo "Erroare la baza de date sau calculator inchis";
+        return false;
     } else{
         return true; 
     }
     ibase_close($dbh);
 }
 
-// /alterTriggerActive("localhost");
+//echo alterTriggerActive("192.168.13.20","G3");
 
-function alterTriggerInActive($ip){
-    $db = $ip.':supermarket-bo';
+function alterTriggerInActive($ip,$store_short_name){
+    if($store_short_name === "G40" || $store_short_name === "G42")
+        $db = $ip.':supermarket-bo-'.$store_short_name;
+    else
+        $db = $ip.':supermarket-bo';
     $username = 'SYSDBA';
     $password = 'masterkey';
     // Connect to database
@@ -31,10 +38,11 @@ function alterTriggerInActive($ip){
     $commitResult = ibase_commit ($dbh);
     if(!$sth || !$commitResult){
         echo "Erroare la baza de date sau calculator inchis";
+        return false;
     } else{
         return true; 
     }
     ibase_close($dbh);
 }
-
+//echo alterTriggerActive("192.168.8.21");
 ?>

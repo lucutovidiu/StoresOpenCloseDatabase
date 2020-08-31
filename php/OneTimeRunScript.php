@@ -18,8 +18,8 @@
         } 
         
         foreach($csv as $value){
-
-            $sql = "INSERT INTO STORES (store_short_name, store_full_name, store_ip, store_status) VALUES ('".$value[1]."', '".$value[0]."', '".$value[2]."', 'close');";
+            $storeID=substr($value[1],1);
+            $sql = "INSERT INTO STORES (store_id, store_short_name, store_full_name, store_ip, store_status) VALUES (".$storeID.", '".$value[1]."', '".$value[0]."', '".$value[2]."', 'close')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "Record : Store short name - ".$value[1]." Store full name - ".$value[0]." Store IP: ".$value[2]."  has added to Stores table<br>";

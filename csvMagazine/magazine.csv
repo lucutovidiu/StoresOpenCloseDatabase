@@ -1,37 +1,99 @@
-Magazin G3,G3,192.168.1.3,inactiv
-Magazin G4,G4,192.168.1.4,inactiv
-Magazin G5,G5,192.168.1.5,inactiv
-Magazin G6,G6,192.168.1.6,inactiv
-Magazin G7,G7,192.168.1.7,inactiv
-Magazin G8,G8,192.168.1.8,inactiv
-Magazin G9,G9,192.168.1.9,inactiv
-Magazin G10,G10,192.168.1.10,inactiv
-Magazin G11,G11,192.168.1.11,inactiv
-Magazin G12,G12,192.168.1.12,inactiv
-Magazin G13,G13,192.168.1.13,inactiv
-Magazin G14,G14,192.168.1.14,inactiv
-Magazin G15,G15,192.168.1.15,inactiv
-Magazin G16,G16,192.168.1.16,inactiv
-Magazin G17,G17,192.168.1.17,inactiv
-Magazin G18,G18,192.168.1.18,inactiv
-Magazin G19,G19,192.168.1.19,inactiv
-Magazin G20,G20,192.168.1.20,inactiv
-Magazin G21,G21,192.168.1.21,inactiv
-Magazin G22,G22,192.168.1.22,inactiv
-Magazin G23,G23,192.168.1.23,inactiv
-Magazin G24,G24,192.168.1.24,inactiv
-Magazin G25,G25,192.168.1.25,inactiv
-Magazin G26,G26,192.168.1.26,inactiv
-Magazin G27,G27,192.168.1.27,inactiv
-Magazin G28,G28,192.168.1.28,inactiv
-Magazin G29,G29,192.168.1.29,inactiv
-Magazin G30,G30,192.168.1.30,inactiv
-Magazin G31,G31,192.168.1.31,inactiv
-Magazin G32,G32,192.168.1.32,inactiv
-Magazin G33,G33,192.168.1.33,inactiv
-Magazin G34,G34,192.168.1.34,inactiv
-Magazin G35,G35,192.168.1.35,inactiv
-Magazin G36,G36,192.168.1.36,inactiv
-Magazin G37,G37,192.168.1.37,inactiv
-Magazin G38,G38,192.168.1.38,inactiv
-Magazin G39,G39,192.168.1.39,inactiv
+G10 - Casa Alba,G10,192.168.8.21
+G11 - Carpati II,G11,192.168.9.11
+G12 - Negresti Oas,G12,192.168.16.16
+G13 - Tasnad,G13,192.168.17.16
+G15 - Carei Supermarket,G15,192.168.19.20
+G16 - Sighetu Marmatiei,G16,192.168.22.23
+G17 - Borsa,G17,192.168.23.24
+G18 - Viseul de sus,G18,192.168.25.29
+G20 - Bistrita,G20,192.168.32.32
+G21 - Vatra Dornei,G21,192.168.21.21
+G22 - Zalau 1,G22,192.168.33.33
+G23 - Zalau 2,G23,192.168.34.34
+G24 - Simleu Silvaniei,G24,192.168.36.36
+G25 - Cehu Silvaniei,G25,192.168.30.30
+G26 - Jibou,G26,192.168.37.37
+G27 - Marghita,G27,192.168.39.39
+G28 - Gherla,G28,192.168.40.40
+G3 - Piata Somes,G3,192.168.13.20
+G30 - Dej,G30,192.168.41.41
+G31 - Cluj 1 Primaverii,G31,192.168.42.42
+G32 - Cluj 2 Calea Floresti,G32,192.168.43.43
+G33 - Cluj 3 P-ta Mihai Viteazu,G33,192.168.44.44
+G34 - Cluj 4 Grigorescu,G34,192.168.45.45
+G35 - Oradea Aluminei,G35,192.168.49.49
+G37 - Oradea Transilvaniei,G37,192.168.46.46
+G38 - Oradea Erofte,G38,192.168.48.48
+G39 - Oradea Nufarului,G39,192.168.47.47
+G40 - Turt,G40,192.168.51.51
+G42 - Turt 2,G42,192.168.51.51
+G43 - Valea lui Mihai,G43,192.168.54.54
+G44 - Campulung Moldovenesc,G44,192.168.55.55
+G46 - Gura Humorului,G46,192.168.59.59
+G47 - Arad 1 Calea Aurel Vlaicu,G47,192.168.57.57
+G48 - Arad 2 P-ta Garii,G48,192.168.58.58
+G49 - Arad 3 P-ta Mihai Viteazu,G49,192.168.56.56
+G5 - Carei Mic,G5,192.168.10.10
+G51 - Stei,G51,192.168.61.61
+G52 - Beius,G52,192.168.62.62
+G53 - Deva 1 Dacia,G53,192.168.65.65
+G54 - Deva 2 Bejan,G54,192.168.66.66
+G55 - Deva 3 Progresului,G55,192.168.63.63
+G56 - Deva 4 Kogalniceanu,G56,192.168.64.64
+G57 - Cluj 6 Aurel Vlaicu,G57,192.168.68.68
+G58 - Arad 4 Confectii,G58,192.168.71.71
+G6 - Brindusa / Micro 16,G6,192.168.11.15
+G60 - Arad 6 Micalaca,G60,192.168.73.73
+G61 - Sannicolau,G61,192.168.72.72
+G62 - Jimbolia,G62,192.168.70.70
+G63 - Resita 1 Intim,G63,192.168.69.69
+G64 - Resita 2 Triumf,G64,192.168.76.76
+G65 - Lugoj 1 Timisoarei,G65,192.168.75.75
+G66 - Lugoj 2 Bucegi,G66,192.168.67.67
+G67 - Timisioara 1 Ciupercuta,G67,192.168.78.78
+G68 - Timisioara 2 Sagului,G68,192.168.79.79
+G69 - Timisioara 3 Iosefini,G69,192.168.85.85
+G7 - Micro 15,G7,192.168.15.24
+G70 - Timisioara 4 Gara,G70,192.168.77.77
+G72 - Timisioara 6 Cugir,G72,192.168.81.81
+G73 - Timisioara 7 Holdelor,G73,192.168.83.83
+G74 - Timisioara 8 Lucaciu,G74,192.168.82.82
+G75 - Ortisoara,G75,192.168.84.84
+G76 - Timisoara 9 Lugojului,G76,192.168.87.87
+G78 - Chisinau Cris,G78,192.168.86.86
+G8 - Micro 17,G8,192.168.7.28
+G80 - Ineu,G80,192.168.91.91
+G81 - Lipova,G81,192.168.92.92
+G82 - Sacueni,G82,192.168.89.89
+G83 - Brad,G83,192.168.4.4
+G84 - Sebis,G84,192.168.95.95
+G85 - Falticeni,G85,192.168.98.98
+G86 - Suceava 1,G86,192.168.99.99
+G87 - Suceava 2,G87,192.168.97.97
+G88 - Radauti,G88,192.168.80.80
+G89 - Suceava 3,G89,192.168.100.100
+G9 - Piata Mica,G9,192.168.14.14
+G91 - Alesd,G91,192.168.109.109
+G92 - Faget,G92,192.168.74.74
+G93 - Periam,G93,192.168.150.150
+G94 - Curtici,G94,192.168.199.199
+G95 - Floresti,G95,192.168.200.200
+G96 - Petrova,G96,192.168.201.201
+G97 - Halmeu,G97,192.168.231.231
+G98 - Oradea,G98,192.168.232.232
+G99 - Brad II,G99,192.168.125.125
+G104 - Vicovu de jos,G104,192.168.126.126
+G105 - Vicovu de sus,G105,192.168.151.151
+G106 - Rona de sus,G106,192.168.168.168
+G107 - Bixad,G107,192.168.24.24
+G108 - Mediesu Aurit,G108,192.168.169.169
+G109 - Ulmeni,G109,192.168.12.12
+G110 - Seini,G110,192.168.53.53
+G111 - Dragomiresti,G111,192.168.240.240
+G112 - Pancota,G112,192.168.110.110
+G113 - Sagu,G113,192.168.111.111
+G114 - Calinesti-Oas,G114,192.168.112.112
+G115 - Barsana,G115,192.168.113.113
+G116 - Poienile de sub munte,G116,192.168.170.170
+G117 - Odoreu,G117,192.168.114.114
+G50 - Depozit Ortisoara Marfa,G50,192.168.60.60

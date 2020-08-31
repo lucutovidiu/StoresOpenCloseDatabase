@@ -5,7 +5,7 @@ class LocalSqlConnection{
     public $username = "root";
     public $password = "";
     public $dbname = "store_data";
-    public $email_subject="Avizul aprobat";
+    public $email_subject="Avizul a fost aprobat pentru magazinul";
     public $conn;
 
     function getConnection(){
@@ -104,10 +104,10 @@ class LocalSqlConnection{
 
     public function updateStatusIntoTableStoresByID($store_short_name,$store_id,$store_status){
         $this->getConnection();
-        $ip = "localhost";// getIpAddressByStoreID($store_id);
+        $ip = $this->getIpAddressByStoreID($store_id);
 
         if($store_status==="open"){
-            if(!alterTriggerInActive($ip)){
+            if(!alterTriggerInActive($ip,$store_short_name)){
                 $sql = "alter trigger iesiri_poz_biu inactive";
                 $this->logUpdateToLogsTableByID($store_short_name,$store_id,$sql,"firebase computer closed or database closed");
                 $this->closeConection();
@@ -118,7 +118,7 @@ class LocalSqlConnection{
                 $this->logUpdateToLogsTableByID($store_short_name,$store_id,$sql,"Success");
             }
         }elseif($store_status==="close"){
-            if(!alterTriggerActive($ip)){
+            if(!alterTriggerActive($ip,$store_short_name)){
                 $sql = "alter trigger iesiri_poz_biu active";
                 $this->logUpdateToLogsTableByID($store_short_name,$store_id,$sql,"firebase computer closed or database closed");
                 $this->closeConection();
@@ -185,10 +185,10 @@ class LocalSqlConnection{
     public function getOnScreenHTMLLogs(){
         $this->getConnection();
         
-        $sql = "select l.log_id,l.log_date, s.store_full_name, s.store_ip, s.store_status, l.log_sql_action, l.log_result from logs l,stores s where l.store_id = s.store_id ORDER BY l.log_id desc";
+        $sql = "select l.log_id,l.log_date, s.store_full_name, s.store_ip, l.log_sql_action, l.log_result from logs l,stores s where l.store_id = s.store_id ORDER BY l.log_id desc";
         $result = $this->conn->query($sql);
-        $output = "<table border='1'> <tr> <th>Log ID</th><th>Log Date</th><th>Store Full Name</th><th>Store IP</th><th>Store Status</th><th>Log Sql Action</th><th>Log Result</th></tr>";
-        $csvOutput = "Log ID,Log Date,Store Full Name,Store IP,Store Status,Log Sql Action,Log Result\n";
+        $output = "<table border='1'> <tr> <th>Log ID</th><th>Log Date</th><th>Store Full Name</th><th>Store IP</th><th>Log Sql Action</th><th>Log Result</th></tr>";
+        $csvOutput = "Log ID,Log Date,Store Full Name,Store IP,Log Sql Action,Log Result\n";
         while($row = $result->fetch_assoc()){
             $output .="<tr>";
 
@@ -196,13 +196,12 @@ class LocalSqlConnection{
             $output .="<td>".$row['log_date']."</td>";
             $output .="<td>".$row['store_full_name']."</td>";
             $output .="<td>".$row['store_ip']."</td>";
-            $output .="<td>".$row['store_status']."</td>";
             $output .="<td>".$row['log_sql_action']."</td>";
             $output .="<td>".$row['log_result']."</td>";
 
             $output .="</tr>";
 
-            $csvOutput .=  $row['log_id'].",".str_replace(",", "",$row['log_date']).",".str_replace(",", "",$row['store_full_name']).",".str_replace(",", "",$row['store_ip']).",".str_replace(",", "",$row['store_status']).",".str_replace(",", "",$row['log_sql_action']).",".str_replace(",", "",$row['log_result'])."\n";
+            $csvOutput .=  $row['log_id'].",".str_replace(",", "",$row['log_date']).",".str_replace(",", "",$row['store_full_name']).",".str_replace(",", "",$row['store_ip']).",".str_replace(",", "",$row['log_sql_action']).",".str_replace(",", "",$row['log_result'])."\n";
         }
 
         $output .="</table>";
@@ -222,7 +221,7 @@ class LocalSqlConnection{
 
         $this->getConnection();
 
-        $sql="select * from stores";
+        $sql="select * from stores order by store_id asc";
         
         $outputBtnClose = "";
         $result = $this->conn->query($sql);
@@ -249,7 +248,7 @@ class LocalSqlConnection{
     public function Get_Buttons_Lista_Dechisa(){
         $this->getConnection();
 
-        $sql="select * from stores";
+        $sql="select * from stores order by store_id asc";
         $outputBtnOpen = "";
         $result = $this->conn->query($sql);
         $times = 0;
