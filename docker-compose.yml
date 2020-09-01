@@ -1,0 +1,24 @@
+version : '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+        - "3306:3306"
+    container_name: store_db_mysql
+    volumes:
+        - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: store_data
+  webserver:
+    build: 
+        context: .   
+        dockerfile: dockerfile
+    container_name: store_php
+    ports:
+      - 8181:80
+    volumes:
+      - .:/var/www/html      
+volumes:
+    db_data:

@@ -5,7 +5,7 @@
     function populateStoresTableFirstTime(){
         $csv = array_map('str_getcsv', file('../csvMagazine/magazine.csv'));
 
-        $servername = "localhost";
+        $servername = "mysql";
         $username = "root";
         $password = "";
         $dbname = "store_data";
@@ -15,8 +15,24 @@
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
-        } 
-        
+        }
+
+        $sql = <<<'EOD'
+CREATE TABLE STORES (
+            store_id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+            store_short_name varchar(15) UNIQUE NOT NULL,
+            store_full_name varchar(35) UNIQUE NOT NULL,
+            store_ip varchar(30) NOT NULL,
+            store_status varchar(30) NOT NULL
+        )
+EOD;
+        if ($conn->query($sql) === TRUE) {
+            echo "Table STORES created";
+        } else {
+            echo "Table STORES Not created ".$conn->error;
+        }
+        $conn->query($sql);
+
         foreach($csv as $value){
             $storeID=substr($value[1],1);
             $sql = "INSERT INTO STORES (store_id, store_short_name, store_full_name, store_ip, store_status) VALUES (".$storeID.", '".$value[1]."', '".$value[0]."', '".$value[2]."', 'close')";

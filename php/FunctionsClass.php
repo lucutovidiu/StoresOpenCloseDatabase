@@ -102,12 +102,29 @@ class LocalSqlConnection{
         return $ip;
     }
 
+    public function getDbNameByStoreId($store_id){
+        $sql  = "select db_name from stores where store_id='".$store_id."'";
+        $result = $this->conn->query($sql);
+        $row = $result->fetch_assoc();
+        $db_name = $row["db_name"];
+        return $db_name;
+    }
+
+    public function getDbNameUrlFromStoreId($store_id){
+        $sql  = "select store_ip, db_name from stores where store_id='".$store_id."'";
+        $result = $this->conn->query($sql);
+        $row = $result->fetch_assoc();
+        $store_ip = $row["store_ip"];
+        $db_name = $row["db_name"];
+        return $store_ip.":".$db_name;
+    }
+
     public function updateStatusIntoTableStoresByID($store_short_name,$store_id,$store_status){
         $this->getConnection();
-        $ip = $this->getIpAddressByStoreID($store_id);
+        $db_con_url = $this->getDbNameUrlFromStoreId($store_id);
 
         if($store_status==="open"){
-            if(!alterTriggerInActive($ip,$store_short_name)){
+            if(!alterTriggerInActive($db_con_url)){
                 $sql = "alter trigger iesiri_poz_biu inactive";
                 $this->logUpdateToLogsTableByID($store_short_name,$store_id,$sql,"firebase computer closed or database closed");
                 $this->closeConection();
@@ -118,7 +135,7 @@ class LocalSqlConnection{
                 $this->logUpdateToLogsTableByID($store_short_name,$store_id,$sql,"Success");
             }
         }elseif($store_status==="close"){
-            if(!alterTriggerActive($ip,$store_short_name)){
+            if(!alterTriggerActive($db_con_url)){
                 $sql = "alter trigger iesiri_poz_biu active";
                 $this->logUpdateToLogsTableByID($store_short_name,$store_id,$sql,"firebase computer closed or database closed");
                 $this->closeConection();
