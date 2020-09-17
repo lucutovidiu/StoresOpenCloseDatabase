@@ -5,7 +5,7 @@
     function populateStoresTableFirstTime(){
         $csv = array_map('str_getcsv', file('../csvMagazine/magazine.csv'));
 
-        $servername = "mysql";
+        $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "store_data";
